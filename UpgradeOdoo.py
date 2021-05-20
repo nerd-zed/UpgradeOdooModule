@@ -1,6 +1,5 @@
 import ctypes
 import os
-import subprocess
 import sys
 import time
 
@@ -22,6 +21,7 @@ if is_admin():
     cmd1 = ' net stop "postgresql-x64-13"  '
     cmd2 = ' net start "postgresql-x64-13"  '
     os.popen(cmd1)
+    time.sleep(5)
     os.popen(cmd2)
     time.sleep(5)
     browser = sys.argv[1]
@@ -41,7 +41,7 @@ if is_admin():
 
     alp.clickMenu()
     alp.selectApps()
-    time.sleep(5)
+    time.sleep(3)
     alp.upgradeApp()
 
     # alp.logout()
